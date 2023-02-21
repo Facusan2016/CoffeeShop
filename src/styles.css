@@ -1,0 +1,142 @@
+@font-face {
+    font-family: 'PlayFair Display';
+    src: url('../src/fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family: 'Clicker Script';
+    src: url('../src/fonts/Clicker_Script/ClickerScript-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'ManRope';
+    src: url('../src/fonts/Manrope/Manrope-VariableFont_wght.ttf');
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+
+    /*Variables de color*/
+
+    --color-main-button : #f9c06a;
+    --color-coffee-brown : #603809;
+    --color-coffee-dark-brown : #4e2a00;
+    --color-coffee-light-brown : #FFF9F1;
+    --color-coffee-light-brown-border :#F9C06A6B;
+
+    --color-grey : #707070;
+
+    --color-main-secundary : rgb(247, 0, 255);
+    --color-main-hover : white;
+    --color-main-shadow : rgb(100, 11, 11);
+
+    --color-nav-background : rgb(2, 0, 0);
+    --color-nav-primary :rgb(247, 0, 255);
+
+
+    --var-screen-min : 1024px;
+    --nav-heigth: 8vw;
+    --nav-font-size : 3vw;
+
+}
+
+.yellow-button{
+    display: flex;
+    font-family: 'Playfair Display';
+    align-items: center;
+    text-decoration: none;
+    border-radius: 1.5rem;
+    border: none;
+    color: #000;
+    background-color: var(--color-main-button);
+    box-shadow: 0rem 0rem .5rem .05rem var(--color-main-button);
+    transition: box-shadow 1s ease, color .5s ease, transform .5s ease;
+    height: 2.7rem;
+    padding: 1.5rem;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.yellow-button:hover{
+    color: white;
+    box-shadow: 0rem 0rem 1rem .1rem var(--color-main-button);
+    transform: scale(1.05);
+}
+
+.btn-click{
+    animation-play-state: running;
+}
+
+@keyframes btn {
+    0%{
+        transform: scale(1);
+    }50%{
+        transform: scale(1.1);
+    }100%{
+        transform: scale(1);
+    }
+}
+
+.loaded-transform{
+    transform: none !important;
+
+}
+
+.loaded-size{
+    animation: size 1s ease-in-out forwards;
+}
+
+.loaded-opacity{
+    opacity: 100% !important;
+}
+
+.loaded-qmark{
+    display: block;
+    animation: rotate 2s ease forwards;
+}
+
+.loaded-text-bright{
+    animation: text-bright 1.5s ease forwards;
+}
+
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }20%{
+        transform: rotate(15deg);
+    }40%{
+        transform: rotate(-12deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+
+@keyframes size {
+    0%{
+        transform: scale(1);
+    }50%{
+        transform: scale(0.9);
+    }100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes text-bright {
+    0%{
+        text-shadow: 0px 0px 1rem rgba(255, 255, 255, 0.582);
+        background-position-x: -100rem;
+    }
+    50%{
+        text-shadow: 0px 0px 1rem white;
+        background-position-x: -100rem;
+
+    }100%{
+        text-shadow: 0px 0px 1rem rgba(255, 255, 255, 0);
+        background-position-x: 0rem;
+    }
+}
