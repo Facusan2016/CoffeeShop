@@ -6,7 +6,6 @@ export default function useObserver(options){
     const [entries, setEntries] = useState([]);
 
     const observer = useRef( new IntersectionObserver(function(observedEntries){
-        console.log(observedEntries);
         setEntries(observedEntries);
     }, options));
 

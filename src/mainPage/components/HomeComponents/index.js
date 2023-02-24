@@ -5,4 +5,4 @@ export * from './HomeInfo';
 export * from './HomeExperience';
 export * from './HomeFeedback';
 export * from './HomeSubscribe';
-export * from './HomeFooter';
+export * from '../../../ui/Footer/Footer';

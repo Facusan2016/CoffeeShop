@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom"
 
 
-export const HomeFooter = () => {
+export const Footer = ({bgcolor}) => {
   return (
-    <footer>
+    <footer style={{backgroundColor : bgcolor}}>
 
           <article>
 

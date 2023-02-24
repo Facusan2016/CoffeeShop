@@ -1,13 +1,15 @@
+import { AnimatePresence } from 'framer-motion'
 import React from 'react'
 import { AppRouter } from './router/AppRouter'
 import './styles.css'
-import { Navbar } from './ui/components/Navbar'
+import Transitions from './transitions/Transitions'
 
 export const ConstructionApp = () => {
   return (
-    <>  
-        <Navbar/>
-        <AppRouter/>
+    <>   
+        <AnimatePresence mode='wait'>
+            <AppRouter/>
+        </AnimatePresence>
     </>
   )
 }

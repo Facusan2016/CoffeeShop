@@ -29,7 +29,6 @@ export const HomeInfo = () => {
         if(entry.isIntersecting){
         const item = entry.target;
         const child = document.querySelectorAll('.home-info-items > article');
-        console.log(child);
 
         let counter = 0;
 
@@ -82,7 +81,7 @@ export const HomeInfo = () => {
 
           <h3>Great ideas start with great coffee, Lets help you achieve that</h3>
           <h4>Get started today</h4>
-          <Link className='yellow-button info-btn' to='/'><b>Join Us</b></Link>
+          <Link className='yellow-button info-btn' to='/shop'><b>Join Us</b></Link>
 
     </section>
   )

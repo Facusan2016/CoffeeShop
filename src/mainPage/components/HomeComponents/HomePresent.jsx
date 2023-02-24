@@ -11,7 +11,7 @@ export const HomePresent = () => {
           best flavours coffee you will ever have. We provide the best
           for our customers.
           </p>
-            <Link className='yellow-button present-btn' to='/'>Order Now</Link>
+            <Link className='yellow-button present-btn' to='/shop'>Order Now</Link>
         </div>
     </section>
   )

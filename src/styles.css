@@ -29,6 +29,7 @@
     --color-coffee-light-brown-border :#F9C06A6B;
 
     --color-grey : #707070;
+    --color-light-grey : #808080;
 
     --color-main-secundary : rgb(247, 0, 255);
     --color-main-hover : white;
@@ -101,6 +102,7 @@
 .loaded-text-bright{
     animation: text-bright 1.5s ease forwards;
 }
+
 
 @keyframes rotate {
     0%{

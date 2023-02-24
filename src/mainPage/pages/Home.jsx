@@ -1,38 +1,52 @@
 import '../pageStyles/Home.css'
-import { HomeShop, HomeCoffee, HomePresent, HomeInfo, HomeExperience, HomeFeedback, HomeSubscribe, HomeFooter } from '../components/HomeComponents';
-import { useEffect } from 'react';
+import { HomeShop, HomeCoffee, HomePresent, HomeInfo, HomeExperience, HomeFeedback, HomeSubscribe} from '../components/HomeComponents';
+import { Footer} from '../../ui/Footer/Footer'
+import '../../ui/Footer/Footer.css'
 
+
+import { useEffect } from 'react';
+import Transitions from '../../transitions/Transitions';
 
 
 export const Home = () => {
-
+  
   //TODO: Hacer que los botones al clickearlos se agranden y achiquen
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
+
 
 
   return (
-    <main className='home'>
+    <>
 
-      <HomePresent/>
+      <Transitions>
 
-      <section className='home-csa'>
+        <main className='home'>
 
-        <HomeCoffee/>
-        <HomeShop/>
-        <HomeInfo/>
-        
-      </section>
+          <HomePresent/>
 
-      <HomeExperience/>
-      <HomeFeedback/>
-      
+          <section className='home-csa'>
 
-      <div className='home-sf'>
-        
-        <HomeSubscribe/>
-        <HomeFooter/>
+            <HomeCoffee/>
+            <HomeShop/>
+            <HomeInfo/>
+            
+          </section>
 
-      </div>
+          <HomeExperience/>
+          <HomeFeedback/>
+          
 
-    </main>
+          <div className='home-sf'>
+            
+            <HomeSubscribe/>
+            <Footer bgcolor="var(--color-coffee-dark-brown)" />
+
+          </div>
+
+        </main>
+      </Transitions>
+    </>
   )
 }

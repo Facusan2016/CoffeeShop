@@ -24,7 +24,7 @@ nav{
     display: flex;
     flex-direction: column;
     font-family: 'Playfair Display';
-    color: rgb(172, 172, 172);
+    color: rgb(230, 230, 230);
     transition: all .5s ease;
     -webkit-tap-highlight-color: transparent;
 }
@@ -91,7 +91,7 @@ nav a{
         padding: 1rem 1.5rem;
         flex-direction: row;
         background-image: none;
-        background-color: var(--color-coffee-dark-brown);
+        background-color:#bfa07c;
     }
 
     .nav-links{
@@ -99,14 +99,14 @@ nav a{
         position: fixed;
         flex-direction: column;
         align-items: flex-start;
-        padding: 1.5rem;
+        padding: 2rem;
         justify-content: flex-start;
         top: 4rem;
         right: 0;
         height: 100vh;
         width: 100vw;
         z-index: 30;
-        background-color: var(--color-coffee-brown);
+        background-color:#bfa07c;
         transition: transform 1s ease;
         transform: translateX(-100vw);
     }
@@ -121,20 +121,10 @@ nav a{
         display: flex;
         flex-direction: row;
         width: 100%;
-        font-family: 'Manrope' ;
-        letter-spacing: .2rem;
-        font-size: 1.2rem !important;
+        letter-spacing: unset;
+        font-size: 1.3rem !important;
         align-items: center;
         justify-content: space-between;
-    }
-
-    .nav-link::after{
-
-        height: 2rem;
-        content: url('../../assets/arrow.svg');
-        color: white;
-        background-color: transparent;
-        width:unset;
     }
 
     .nav-link:hover::after{
@@ -143,7 +133,6 @@ nav a{
 
     .nav-btn{
         width: 100%;
-        font-family: 'Manrope';
     }
 
     .nav-auth{

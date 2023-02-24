@@ -1,0 +1,399 @@
+
+/*AboutMain Styles*/
+
+:root{
+    --gap-main : 4rem;
+    overflow-x: hidden;
+}
+
+
+.loaded-h1-info{
+    opacity: 100% !important;
+    transform: none !important;
+}
+
+.about-main{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    gap: 4rem;
+    padding: 6rem var(--gap-main) 6rem var(--gap-main);
+    background: url('../../mainPage/components/AboutComponents/assets/coffee-beans-background.jpg') center center;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Playfair Display';
+}
+
+.about-main::before{
+    content: '';
+    background: linear-gradient(black, transparent);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.about-main > h1{
+    display: flex;
+    z-index: 2;
+    position: relative;
+    font-family: 'Playfair Display';
+    color: white;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2rem;
+    transition: transform 2s ease-out, opacity 3s ease;
+    transform: translateX(-100vw);
+    opacity: 0%;
+}
+
+.about-main > h1::after{
+    content: '';
+    flex: 30%;
+    margin-top: .7rem;
+    height: .1rem;
+    background-color: white;
+}
+
+
+.about-main-sub{
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+
+}
+
+.about-main-info{
+    display: flex;
+    z-index: 1;
+    position: relative;
+    width: 90%;
+    padding: 1.1rem;
+    border-radius: 25px;
+    background-color: white;
+    flex-direction: row;
+    transition : transform 2s ease-out, opacity 3s ease;
+    
+}
+
+.about-main-info:nth-child(1){
+    margin-left: auto;
+    transform: translateX(100vw);
+    transition-delay: 1s;
+}
+
+.about-main-info:nth-child(2){
+    margin-right: auto;
+    flex-direction: row-reverse;
+    transform: translateX(-100vw);
+}
+
+.about-main-info-img{
+    flex: 30%;
+    border-radius: 25px;
+    background-size: cover !important;
+    box-shadow: 0rem 0rem 1rem .1rem rgba(110, 110, 110, 0.76);
+}
+
+.about-main-info:nth-child(1) .about-main-info-img{
+    background: url('../../mainPage/components/AboutComponents/assets/coffee-place.jpg') no-repeat center center;
+}
+
+.about-main-info:nth-child(2) .about-main-info-img{
+    background: url('../../mainPage/components/AboutComponents/assets/coffee-cups-table.jpg') no-repeat center center;
+}
+
+.about-main-info-content{
+    display: flex;
+    flex-direction: column;
+    padding: 0rem 4rem 4rem 1rem;
+    gap: 1rem;
+    flex: 80%;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.about-main-info-content > h2{
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-coffee-brown);
+}
+
+.about-main-info-content > p{
+    font-size: 1.25rem;
+    padding-left: 1rem;
+    font-weight: 400;
+    line-height: 2rem;
+    color: var(--color-light-grey) ;
+}
+
+
+/*Meet Styles*/
+
+.main-meet{
+    
+    display: flex;
+    position: relative;
+    font-family: 'Playfair Display';
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 6rem;
+    gap: 1rem;
+    width: 100%;
+    z-index: 3;
+    background-color: white;
+
+
+}
+.main-meet > h1{
+
+    width: 100%;
+}
+
+.main-meet > h2{
+
+    width: 100%;
+    padding-left: 1rem;
+    font-weight: 400;
+
+}
+
+/*MeetCardList*/
+
+.meetCardList{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem 3rem ;
+    margin-top: 5rem;
+   
+}
+
+
+/*MeetCard*/
+
+.card{
+    flex: 25%;
+    width: 10rem;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: inset 0rem 0rem 1rem .1rem rgba(192, 192, 192, 0.301) ;
+}
+
+.card-description{
+    z-index: 2;
+    position: absolute;
+    padding: 2rem;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.24);
+    top: 0;
+    left: 0;
+    transform: translateY(100%);
+    transition: transform 1s ease;
+}
+
+.card-description > h3{
+
+    height: 100%;
+    color: white;
+    opacity: 0;
+    transition: opacity 1s ease .3s;
+
+}
+
+.card:hover .card-description{
+    transform: none;
+}
+
+.card:hover .card-img{
+
+    filter: saturate(0%);
+    transform: scale(1.5);
+}
+
+.card:hover .card-description > h3{
+    opacity: 100%;
+}
+
+.card-img{
+    transform-origin: center top;
+    height: auto;
+    width: 100%;
+    object-fit: contain;
+    transition: transform 1s ease, filter 1s ease;
+
+}
+
+.card-info{
+    width: 100%;
+    padding: 1rem;
+}
+
+.card-info > h4{
+    font-weight: 400;
+}
+
+/*Coffee Experience*/
+
+.load-experience{
+    opacity: 100% !important;
+}
+
+.coffee-experience{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('../../mainPage/components/AboutComponents/assets/wood-background.jpg.jpg') no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 40rem;
+    box-shadow: 0px 0px 26px 5px rgba(176,176,176,0.75);;
+}
+
+.coffee-experience > h1{
+    font-family: 'Playfair Display';
+    color: white;
+    font-size: 4rem;
+    font-weight: 400;
+    text-align: center;
+    line-height: 5rem;
+    opacity: 0%;
+    transform: scale(0.9);
+    transition: opacity 2s ease, transform 1s ease;
+
+}
+
+@media screen and (max-width:1024px) {
+    
+    /*Mobile AboutMain Styles */
+
+    .about-main{
+        padding: 6rem 1rem 4rem 1rem;
+    }
+    
+    .about-main > h1{
+        font-size: 2rem;
+        gap: 2rem;
+    }
+    
+    .about-main > h1::after{
+     flex: 100%;
+    }
+    
+    .about-main-sub{
+        gap: 1.5rem;
+    }
+    
+    .about-main-info{
+        margin: unset;
+        width: 100%;
+        
+        flex-direction: column-reverse !important;
+        transform: translateY(100vh);
+        gap: 2rem;
+    }
+
+    .about-main-info:nth-child(1){
+        transform: translateY(100vh);
+        transition-delay: 0s;
+    }
+
+    .about-main-info:nth-child(2){
+        transform: translateY(100vh);
+        transition-delay: 0s;
+    }
+    
+    .about-main-info-content{
+        padding: 0rem;
+
+    }
+    
+    .about-main-info-content > h2{
+        font-size: 1.75rem;
+    }
+    
+    .about-main-info-img{
+        min-height: 15rem;
+        width: 100%;
+        object-fit: cover;
+        box-shadow: none;
+    }
+    
+    .about-main-info-content > p{
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+    
+    
+    /*Mobile Meet Styles*/
+    
+    .main-meet{
+        padding: 1rem;
+    }
+
+    .main-meet > h1{
+        font-size: 2rem;
+    }
+
+    .main-meet > h2{
+        font-size: 1.2rem;
+    }
+
+    .meetCardList{
+        margin-top: 1rem;
+        gap: 1rem;
+        align-items: flex-start;
+
+    }
+
+    .card{
+        flex: 40%;
+        flex-grow: 1;
+    }
+
+    .card-description{
+        padding: 1rem;
+        font-size: .7rem;
+    }
+
+    .card-description > h3{
+        text-align: start;
+        line-height: 1.5rem;
+    }
+
+    .card-info{
+        padding: .5rem;
+    }
+
+    .card-info > h3{
+        text-align: left;
+        font-size: .8rem;
+    }
+
+    .card-info > h4{
+        font-size: .7rem;
+    }
+
+    /*Mobile Coffee Experience*/
+    
+    .coffee-experience{
+        padding: 1rem;
+        height: 30rem;
+    }
+
+    .coffee-experience > h1{
+        font-size: 3rem;
+        line-height: 3.1rem;
+    }
+}

@@ -29,7 +29,7 @@ export const HomeExperience = () => {
             item.classList.add('loaded-size');
             setTimeout(function(){
               item.classList.remove('loaded-size');
-            }, 500)
+            }, 1000)
           }else{
             item.classList.add('loaded-text-bright');
           }
@@ -46,7 +46,7 @@ export const HomeExperience = () => {
         <article >
           <h1>Get a chance to have an Amazing morning</h1>
           <h2>We are giving you a one time opportunity to experience a better life with coffee.</h2>
-          <Link className='yellow-button info-btn' to='/'><b>Order now</b></Link>
+          <Link className='yellow-button info-btn' to='/shop'><b>Order now</b></Link>
         </article>
 
         <img className='coffee-cup' src={coffeeexp}  loading='lazy'></img>

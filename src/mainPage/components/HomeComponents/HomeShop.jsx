@@ -43,28 +43,28 @@ export const HomeShop = () => {
                 <h2>Cappuccino</h2>
                 <h3>Coffee 50% | Milk 50%</h3>
                 <h2>$8.50</h2>
-                <Link className='yellow-button shop-btn' to='/'>Order Now</Link>
+                <Link className='yellow-button shop-btn' to='/shop'>Order Now</Link>
                 </li>
             <li>
                 <img src={chailatte}  loading='lazy'></img>
                 <h2>Chai Latte</h2>
                 <h3>Coffee 50% | Milk 50%</h3>
                 <h2>$8.50</h2>
-                <Link className='yellow-button shop-btn' to='/'>Order Now</Link>
+                <Link className='yellow-button shop-btn' to='/shop'>Order Now</Link>
             </li>
             <li>
                 <img src={expresso}  loading='lazy'></img>
                 <h2>Macchiato</h2>
                 <h3>Coffee 50% | Milk 50%</h3>
                 <h2>$8.50</h2>
-                <Link className='yellow-button shop-btn' to='/'>Order Now</Link>
+                <Link className='yellow-button shop-btn' to='/shop'>Order Now</Link>
             </li>
             <li>
                 <img src={macchiato}  loading='lazy'></img>
                 <h2>Expresso</h2>
                 <h3>Coffee 50% | Milk 50%</h3>
                 <h2>$8.50</h2>
-                <Link className='yellow-button shop-btn' to='/'>Order Now</Link>
+                <Link className='yellow-button shop-btn' to='/shop'>Order Now</Link>
             </li>
         </ul>
     </section>

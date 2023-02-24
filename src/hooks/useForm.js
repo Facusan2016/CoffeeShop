@@ -12,14 +12,9 @@ export const useForm = ( initialForm = {}, formValidations = {}) => {
     }, [ formState ])
 
     useEffect(() => {
-      
         setFormState( initialForm ); //Actualizamos el InitialForm cada vez que este mismo cambie
-
     }, [initialForm])
 
-    
-    
-    
     const isFormValid = useMemo( () => {
 
         for (const formValue of Object.keys( formValidation )) {
@@ -36,7 +31,6 @@ export const useForm = ( initialForm = {}, formValidations = {}) => {
             ...formState,
             [ name ]: value
         });
-        console.log(formState);
     }
 
     const onResetForm = () => {
