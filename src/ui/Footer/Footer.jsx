@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 export const Footer = ({bgcolor}) => {
   return (
-    <footer style={{backgroundColor : bgcolor}}>
+    <footer style={{background : `linear-gradient(${bgcolor}, black)`}}>
 
           <article>
 

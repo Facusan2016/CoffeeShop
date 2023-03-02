@@ -1,0 +1,185 @@
+:root{
+    --color-shop-background : #2c1d0b;
+    --color-shop-dark-coffee : #221506;
+    --color-shop-middle-coffee : #442808;
+    --color-shop-coffee : #603809;
+    
+}
+ 
+/*Main container styles*/
+
+.shop-main{
+    font-family: 'Playfair Display';  
+    background-color: var(--color-shop-background);
+}
+
+/*Title and line styles*/
+
+.title-shop{
+    position: relative;
+    padding: 6rem 4rem 4rem 4rem ;
+    background: url('../../assets/coffee-beans.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.title-shop::before{
+    content: '';
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0,0,0,.5);
+}
+
+.title-shop > h1{
+    position: relative;
+    z-index: 3;
+    color: white;
+    font-size: 4rem;
+    font-weight: 400;
+    border-bottom: .1rem solid rgb(134, 133, 133);
+}
+
+/*SearchBar styles*/
+
+.search-bar{
+    width: 100%;
+    padding: 2rem 3rem;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    
+}
+
+.search-bar > input{
+
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--color-shop-coffee);
+    border: none;
+    border-radius: .25rem 0rem 0rem .25rem;
+    outline: 0px solid transparent;
+    color: white;
+    font-family: 'Playfair Display';
+    font-size: 1rem
+}
+
+.search-bar > input::placeholder{
+
+    font-size: 1rem;
+    font-family: 'Playfair Display';
+}
+
+/*Card container styles*/
+
+.card-shop-container{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem 3rem ;
+    margin-top: 3rem;
+    padding: 0rem 10rem;
+    min-height: 100vh;
+   
+}
+
+
+/*Card items styles*/
+.shop-card-item{
+    flex: 0 0 20rem;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    gap: 1rem;
+    padding-bottom: 1rem;
+}
+
+
+.card-item-img{
+    width: 100%;
+    min-height: 25rem;
+    border: .5rem solid var(--color-shop-middle-coffee);
+    border-radius: .5rem;
+    background-size: cover;
+    background-position: center center;
+}
+
+.card-item-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.card-item-text{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card-item-text > h2{
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 400;
+    
+}
+
+.card-item-text > h3{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1rem;
+    color: rgb(187, 187, 187);
+    margin-bottom: auto;
+}
+
+.card-item-btn{
+    padding: 1rem;
+    background-color: #603809;
+    color: var(--color-main-button);
+    border: none;
+    border-radius: .25rem;
+    font-family: 'PLayfair Display';
+    font-size: 1rem;
+    margin-top: auto;
+    transition: .5s transform ease;
+    cursor: pointer;
+}
+
+.card-item-btn:hover{
+    transform: scale(1.1);
+}
+
+.not-found{
+    font-family: 'Playfair Display';
+    color: var(--color-shop-coffee);
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+/*Mobile styles*/
+
+@media screen and (max-width : 1024px) {
+
+    .title-shop > h1{
+        font-size: 3rem;
+        border: none;
+    }
+
+    .search-bar{
+        padding: 1rem;
+    }
+
+    .card-shop-container{
+        margin-top: 1rem;
+        padding: 2rem;
+    }
+
+}

@@ -23,7 +23,7 @@ export const Navbar = () => {
         <section className={navState ? ActiveNav : NotActiveNav}>
 
             <NavLink to="/home" className ={({isActive}) =>`nav-link ${isActive ? 'active' : ''}`} onClick={handleMenu}>Home</NavLink>
-            <NavLink to="/shop" className='nav-link' onClick={handleMenu}>Menu </NavLink>
+            <NavLink to="/shop" className='nav-link' onClick={handleMenu}>Shop</NavLink>
             <NavLink to="/about" className='nav-link' onClick={handleMenu}>About Us</NavLink>
             <NavLink to="/contact-us" className='nav-link' onClick={handleMenu}>Contact Us</NavLink>
             <NavLink to="/login" className='nav-btn yellow-button ' onClick={handleMenu}>Login</NavLink>

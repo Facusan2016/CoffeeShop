@@ -29,7 +29,6 @@ export const Home = () => {
           <section className='home-csa'>
 
             <HomeCoffee/>
-            <HomeShop/>
             <HomeInfo/>
             
           </section>
