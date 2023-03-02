@@ -28,7 +28,7 @@ export const CardContainer = () => {
     return (
     <section className='card-shop-container'>
         {
-           newData.length > 0 ? newData.map(e => (<CardItem key={e.id} img = {`../../../../assets/coffee-shop/${e.id_name}.jpg`} {...e}/> )) : <h2 className='not-found'>No Results Found :(</h2>
+           newData.length > 0 ? newData.map(e => (<CardItem key={e.id} img = {`/coffee-shop/${e.id_name}.jpg`} {...e}/> )) : <h2 className='not-found'>No Results Found :(</h2>
         }
     </section>
   )
