@@ -98,11 +98,11 @@
 }
 
 .about-main-info:nth-child(1) .about-main-info-img{
-    background: url('../../mainPage/components/AboutComponents/assets/coffee-place.jpg') no-repeat center center;
+    background: url('/coffee-about/coffee-place.jpg') no-repeat center center;
 }
 
 .about-main-info:nth-child(2) .about-main-info-img{
-    background: url('../../mainPage/components/AboutComponents/assets/coffee-cups-table.jpg') no-repeat center center;
+    background: url('/coffee-about/coffee-cups-table.jpg') no-repeat center center;
 }
 
 .about-main-info-content{
@@ -254,7 +254,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('../../mainPage/components/AboutComponents/assets/wood-background.jpg.jpg') no-repeat center center;
+    background: url('/coffee-about/wood-background.jpg.jpg') no-repeat center center;
     background-size: cover;
     width: 100%;
     height: 40rem;

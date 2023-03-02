@@ -7,7 +7,7 @@ export const MeetCard = ({
     description
 }) => {
 
-  const member = `src/mainPage/components/AboutComponents/assets/Portraits/${id}.jpg`
+  const member = `/coffee-about/Portraits/${id}.jpg`
 
   return (
     <article className='card'>
