@@ -28,5 +28,5 @@
     "@vitejs/plugin-react": "^3.0.0",
     "vite": "^4.1.3"
   },
-  "homepage": "https://beanscene1.netlify.app"
+  "homepage": "."
 }
