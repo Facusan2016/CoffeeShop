@@ -1,7 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 export const CardItem = ({
 
+    id_name,
     name,
     ingredients,
     description,
@@ -25,9 +27,9 @@ export const CardItem = ({
                     );})
                 }</h3>
             </div>
-            <button className='card-item-btn'>
+            <Link to={`/shop/${id_name}`} className='card-item-btn'>
                 Discover more
-            </button>
+            </Link>
         </div>
 
     </div>

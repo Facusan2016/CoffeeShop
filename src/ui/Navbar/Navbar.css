@@ -1,3 +1,7 @@
+:root{
+    --color-nav-bar-mobile : #472a08;
+}
+    
 nav{
     display: flex;
     position: fixed;
@@ -91,7 +95,7 @@ nav a{
         padding: 1rem 1.5rem;
         flex-direction: row;
         background-image: none;
-        background-color:#bfa07c;
+        background-color: var(--color-nav-bar-mobile);
     }
 
     .nav-links{
@@ -106,7 +110,7 @@ nav a{
         height: 100vh;
         width: 100vw;
         z-index: 30;
-        background-color:#bfa07c;
+        background-color: var(--color-nav-bar-mobile);
         transition: transform 1s ease;
         transform: translateX(-100vw);
     }

@@ -3,10 +3,15 @@
     --color-shop-dark-coffee : #221506;
     --color-shop-middle-coffee : #442808;
     --color-shop-coffee : #603809;
+    --color-shop-btn : #CCA16C;
     
 }
  
 /*Main container styles*/
+
+a{
+    text-decoration: none;
+}
 
 .shop-main{
     font-family: 'Playfair Display';  
@@ -151,6 +156,7 @@
     margin-top: auto;
     transition: .5s transform ease;
     cursor: pointer;
+    box-shadow: 0rem .25rem .25rem rgb(0,0,0,.25);
 }
 
 .card-item-btn:hover{
@@ -162,6 +168,137 @@
     color: var(--color-shop-coffee);
     font-size: 3rem;
     font-weight: 400;
+}
+
+/*CardPage styles*/
+
+.coffee-page{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-shop-background);
+    padding: 8rem 5rem 5rem 5rem;
+    gap: 4rem;
+}
+
+.coffee-page-img{
+    border-radius: .5rem;
+    height: 100%;
+    min-width: 30rem;
+    background-size: cover;
+    background-position: center center;
+    box-shadow: 0rem .25rem 1.25rem 1rem rgb(0,0,0,.25);
+}
+
+.coffee-page-container{
+    max-width: 50rem;
+    height: 100%;
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.coffee-page-info{
+    font-family: 'Playfair Display';
+}
+
+.coffee-page-info > h2{
+    color: white;
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.coffee-page-info > h3{
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.coffee-page-info > h4{
+    color: #CECECE;
+    margin-top: 2rem;
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+.coffee-page-buy{
+    font-family: 'Playfair Display';
+    width: 100%;
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: auto;
+}
+
+.coffee-page-price-add{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.coffee-page-counter{
+
+    display: flex;
+    font-size: 1.5rem;
+    flex-direction: row;
+    justify-content: center;
+    border: .1rem solid var(--color-shop-btn);
+    border-radius: .25rem;
+}
+.coffee-page-counter > h2{
+    text-align: center;
+    font-size: 2.5rem;
+    line-height:normal;
+    background-color: var(--color-shop-dark-coffee);
+    min-width: 4rem;
+    color: white;
+}
+
+.counter-btn{
+    font-family: monospace;
+    min-height: 100%;
+    width: 4rem;
+    background-color: var(--color-shop-coffee);
+    font-size: 2.5rem !important;
+    padding: .5rem;
+    font-size: 2rem;
+    color: white;
+    border: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(255, 251, 251, 0.253);
+}
+
+.btn-1{
+    border-right: .1rem solid var(--color-shop-btn);
+    border-radius: .25rem 0rem 0rem .25rem;
+}
+
+.btn-2{
+    border-left: .1rem solid var(--color-shop-btn);
+    border-radius: 0rem .25rem .25rem 0rem;
+}
+
+.coffee-page-price-add > b{
+    font-size: 2.5rem;
+    color: var(--color-shop-btn);
+}
+
+.coffee-page-add{
+    width: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.coffee-page-add:hover{
+    transform: scale(1.01);
 }
 
 /*Mobile styles*/
@@ -180,6 +317,53 @@
     .card-shop-container{
         margin-top: 1rem;
         padding: 2rem;
+    }
+
+    .coffee-page{
+        padding: 8rem 1rem 1rem 1rem;
+        flex-direction: column;
+    }
+
+    .coffee-page-img{
+        border-radius: .5rem;
+        min-width: unset;
+        max-width: 100%;
+        width: 100%;
+        height: 100%;
+        box-shadow: 0rem .25rem 1.25rem 1rem rgb(0,0,0,.25);
+    }
+
+    .coffee-page-info > h2{
+        font-size: 2.5rem;
+    }
+    
+    .coffee-page-info > h3{
+        text-align: left;
+        font-size: 1.5rem;
+    }
+    
+    .coffee-page-info > h4{
+        margin-top: 1rem;
+        font-size: 1rem;
+    }
+
+
+    .coffee-page-price-add > b{
+        font-size: 2rem;
+    }
+
+    .coffee-page-counter{
+        font-size: 1rem;
+    }
+
+    .coffee-page-counter > h2{
+        font-size: 2rem;
+        min-width: 4rem;
+    }
+    
+    .counter-btn{
+        width: 3rem;
+        font-size: 1.7rem !important;
     }
 
 }

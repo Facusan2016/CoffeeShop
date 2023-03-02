@@ -5,6 +5,7 @@ import { Shop } from '../mainPage/pages/Shop'
 import { About } from '../mainPage/pages/About'
 import { Navbar } from '../ui/Navbar/Navbar'
 import Transitions from '../transitions/Transitions'
+import { CardPage } from '../mainPage/components/ShopComponents/Cards/CardPage'
 
 export const AppRouter = () => {
   return (
@@ -13,11 +14,12 @@ export const AppRouter = () => {
       <Navbar/>
       <Transitions>
         <Routes>
-            <Route path='/shop' element={<Shop/>}/>
+            <Route path='/*' element={<Home/> }/>
+            <Route path='/home' element={<Home/>}/>
             <Route path='/about' element={<About/>}/>
             <Route path='/contact-us' element={<ContactUs/>}/>
-            <Route path='/home' element={<Home/>}/>
-            <Route path='/*' element={<Home/> }/>
+            <Route path='/shop' element={<Shop/>}/>
+            <Route path="/shop/:id" element={<CardPage/>}/>
         </Routes>
       </Transitions>
     </>

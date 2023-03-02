@@ -4,6 +4,7 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useCoffeeData } from '../../../hooks/useCoffeeData';
+import { useCoffeeDataById } from '../../../hooks/useCoffeeDataById';
 import { CardItem } from './CardItem';
 
 var newData = [];
@@ -21,9 +22,7 @@ export const CardContainer = () => {
       newData = data.filter(coffee => coffee.name.toUpperCase().includes(searched.toUpperCase()));
     }, [searched])
 
-  
-
-    
+    console.log(data);
 
     return (
     <section className='card-shop-container'>
