@@ -1,19 +1,14 @@
 import React from 'react'
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import { useForm } from '../../../../hooks/useForm';
 import { updateSearched } from '../../../../store/searchBarSlice';
-import { useCoffeeData } from '../../../hooks/useCoffeeData';
-
 
 const initial = {
   searched : ''
 }
 
-
-
 export const SearchBar = () => {
-
 
   const {searched, onInputChange} = useForm(initial);
   const dispatch = useDispatch();

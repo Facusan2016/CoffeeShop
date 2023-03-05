@@ -10,7 +10,7 @@ export const CardItem = ({
     img
 
 }) => {
-    
+
   return (
     <div className='shop-card-item'>
         <div className='card-item-img' style={{backgroundImage : `url(${img})`}}>

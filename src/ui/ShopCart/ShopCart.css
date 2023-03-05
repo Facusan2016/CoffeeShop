@@ -1,0 +1,439 @@
+
+:root{
+    --color-shop-cart-background : #2C1D0B; 
+    --color-shop-cart-secondary : #603809;
+    --color-shop-cart-light-secondary : #CCA16C;
+}
+
+.nav-transformed{
+    transform: none !important;
+}
+
+.btn-transformed{
+    transform: rotate(180deg);
+}
+
+.mobile-btn{
+    display: none;
+    -webkit-tap-highlight-color: rgba(66, 49, 11, 0.5);
+    transition: transform .5s ease;
+}
+
+.mobile-btn > svg{
+    transition: transform .5s ease;
+}
+
+/*Main Cart Shop styles*/
+
+.main-cart-shop{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-shop-cart-background);
+    padding: 6rem 4rem 4rem 4rem;
+    gap: 3rem;
+    font-family: 'Playfair Display';
+}
+
+/*Shop Cart Checkout*/
+
+.cart-checkout{
+    display: flex;
+    justify-content:flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 100%;
+    width: 30%;
+    min-width: 32rem;
+    gap: 1rem;
+}
+
+.cart-checkout-code-info > h2{
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+
+.cart-checkout-promo{
+    display: flex;
+    position: relative;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    height: 3.5rem;
+}
+
+.cart-checkout-promo > input{
+    background-color:#1d1307;
+    border: none;
+    height: 3rem;
+    width: 100%;
+    border-radius: 0.3rem;
+    box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.250);
+    transition: all 1s ease;
+    font-family: 'Playfair Display';
+    color: rgb(168, 168, 168);
+    padding: 1rem;
+    font-size: 1rem;
+    outline: 0px solid transparent;
+    transition: all 1s ease;
+}
+
+.cart-checkout-promo > input:focus{
+    background-color: var(--color-shop-cart-background);
+
+}
+
+.code{
+    font-size: 'Playfair Display';
+    color: var(--color-shop-cart-light-secondary);
+    font-weight: 400;
+    font-size: 1rem;
+    position: absolute;
+    right: 0;
+    bottom: -2rem;
+}
+.cart-checkout-promo > input{
+    height: 100%;
+    width: 100%;
+    border: none;
+    box-shadow: inset 0rem .25rem .25rem 0rem rgb(0,0,0,.25);
+    border-radius: .25rem 0rem 0rem .25rem;
+}
+
+.cart-checkout-promo > button{
+    height: 100%;
+    font-size: 1rem;
+    color: white;
+    font-family: 'Playfair Display';
+    padding: .5rem 3.5rem;
+    border: none;
+    background-color: var(--color-shop-cart-light-secondary);
+    border-radius: 0rem .25rem .25rem 0rem;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.cart-shop-container{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    overflow-y: scroll;
+}
+
+.cart-checkout-code-info{
+    display: flex;
+    justify-content:flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    gap: 1rem;
+}
+
+/*Cart checkout prices*/
+
+.cart-checkout-prices{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+    margin-top: 3rem;
+    
+}
+
+.cart-checkout-prices-sub{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-shop-cart-secondary);
+    border-radius: .25rem;
+    padding: .3rem .7rem;
+}
+
+.cart-checkout-prices-sub h3{
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.cart-checkout-bottom{
+    margin-top: auto;
+    width: 100%;
+}
+
+.cart-checkout-bottom > button{
+    color: white;
+    text-align: center;
+    line-height: 1rem;
+    font-family: 'Playfair Display';
+    font-weight: 400;
+    padding: 1rem;
+    height: 4.75 rem;
+    border: none;
+    border-radius: .25rem;
+    background-color: var(--color-shop-cart-light-secondary);
+    font-size: 1.5rem;
+    width: 100%;
+    margin-top: 1.5rem;
+    cursor: pointer;
+}
+
+.cart-checkout-total{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cart-checkout-total > h2{
+    color: white;
+    font-weight: 400;
+    font-size: 1.25rem;
+}
+
+.cart-checkout-total > h3{
+    color: white;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+/*Shop Cart Item*/
+
+.cart-shop-item{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 1rem;
+    position: relative;
+    min-height: 13rem;
+    background-color: white;
+    padding: .5rem;
+    border-radius: .25rem;
+    max-height: 20rem;
+}
+
+.cart-shop-item-btn{
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    right: 1rem;
+    top: 1rem;
+}
+
+.cart-shop-item-img{
+    height: auto;
+    width: 100%;
+    max-width: 10rem;
+    background-size: cover;
+    background-position: center center;
+    border-radius: .25rem;
+}
+
+.cart-shop-info{
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-shop-info > h1{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2C1D0B;
+}
+
+.cart-shop-info > h3{
+    text-align: left;
+    font-size: .90rem;
+    line-height: 1rem;
+}
+
+.cart-shop-info-sub{
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-bottom: .1rem;
+}
+
+.cart-shop-info-sub > div{
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+    flex-direction: column;
+}
+
+.cart-shop-info-sub > div > h2{
+    font-size: 1rem;
+    color: var(--color-shop-cart-background);
+}
+
+.cart-shop-info-sub > div > h2{
+    display: flex;
+    align-items: flex-start;
+}
+
+.cart-select{
+    width: 3rem;
+}
+
+
+@media screen and (max-width : 1150px) {
+    
+    .main-cart-shop{
+        gap: 0;
+        flex-direction: column;
+        position: relative;
+        padding: 6rem 1rem 1rem 1rem;
+        overflow-y: hidden;
+    }
+    
+    /*Shop Cart Checkout*/
+    
+    .cart-checkout{
+        width: 100%;
+        gap: unset;
+        height: unset;
+        background-color: var(--color-shop-cart-background);
+        min-width: 10rem;
+        max-width: 50rem;
+    }
+
+    .cart-checkout-code-info{
+        position: absolute;
+        height: unset;
+        z-index: 2;
+        left: 0;
+        top: 4rem;
+        padding: 2rem 1rem;
+        background-color: var(--color-shop-cart-background);
+        transform: translateY(100vh);
+        transition: transform 1.5s ease;
+        overflow-y: hidden;
+        height: 100vh;
+    }
+    
+
+    
+    .cart-checkout-promo{
+        min-height: 3rem;
+    }
+
+    .mobile-btn{
+        margin-top: 0 !important;
+        display: block;
+        background-color: transparent !important;
+    }
+
+    
+    .code{
+
+    }
+    .cart-checkout-promo > input{
+
+    }
+    
+    .cart-checkout-promo > button{
+
+    }
+    
+    .cart-shop-container{
+        height: 100%;
+        padding: 1rem;
+    }
+    
+    /*Cart checkout prices*/
+    
+    .cart-checkout-prices{
+        
+    }
+    
+    .cart-checkout-prices-sub{
+
+        
+
+    }
+    
+    .cart-checkout-prices-sub h3{
+
+    }
+    
+    .cart-checkout-bottom{
+        background-color: var(--color-shop-cart-background);
+
+        padding-bottom: 1rem;
+        margin-bottom: -1rem;
+        z-index: 3;
+    }
+    
+    .cart-checkout-bottom > button{
+        
+    }
+    
+    .cart-checkout-total{
+
+    }
+    
+    .cart-checkout-total > h2{
+
+    }
+    
+    .cart-checkout-total > h3{
+
+    }
+    
+    /*Shop Cart Item*/
+    
+    .cart-shop-item{
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        min-height: unset;
+    }
+    
+    .cart-shop-item-btn{
+
+    }
+    
+    .cart-shop-item-img{
+        max-width: unset;
+        width: 100%;
+        min-height: 10rem;
+    }
+    
+    .cart-shop-info{
+
+    }
+    
+    .cart-shop-info > h1{
+   
+    }
+    
+    .cart-shop-info > h3{
+
+    }
+    
+    .cart-shop-info-sub{
+    }
+    
+    .cart-shop-info-sub > div{
+
+    }
+    
+    .cart-shop-info-sub > div > h2{
+
+    }
+    
+    .cart-shop-info-sub > div > h2{
+       
+    }
+}

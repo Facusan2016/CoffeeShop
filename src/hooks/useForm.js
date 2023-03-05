@@ -12,7 +12,8 @@ export const useForm = ( initialForm = {}, formValidations = {}) => {
     }, [ formState ])
 
     useEffect(() => {
-        setFormState( initialForm ); //Actualizamos el InitialForm cada vez que este mismo cambie
+        setFormState( initialForm );
+         //Actualizamos el InitialForm cada vez que este mismo cambie
     }, [initialForm])
 
     const isFormValid = useMemo( () => {

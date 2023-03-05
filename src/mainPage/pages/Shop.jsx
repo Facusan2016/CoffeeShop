@@ -7,10 +7,6 @@ import '../pageStyles/Shop.css'
 
 export const Shop = () => {
   
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [])
-
   return (
     <Transitions>
     <section className='shop-main'>

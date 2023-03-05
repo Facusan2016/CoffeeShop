@@ -6,6 +6,7 @@ import { About } from '../mainPage/pages/About'
 import { Navbar } from '../ui/Navbar/Navbar'
 import Transitions from '../transitions/Transitions'
 import { CardPage } from '../mainPage/components/ShopComponents/Cards/CardPage'
+import { ShopCart } from '../ui/ShopCart/ShopCart'
 
 export const AppRouter = () => {
   return (
@@ -20,6 +21,7 @@ export const AppRouter = () => {
             <Route path='/contact-us' element={<ContactUs/>}/>
             <Route path='/shop' element={<Shop/>}/>
             <Route path="/shop/:id" element={<CardPage/>}/>
+            <Route path="/shop-cart" element={<ShopCart/>}/>
         </Routes>
       </Transitions>
     </>

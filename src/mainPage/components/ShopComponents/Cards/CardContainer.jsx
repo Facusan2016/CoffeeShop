@@ -3,16 +3,14 @@
 import React from 'react'
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { useCoffeeData } from '../../../hooks/useCoffeeData';
-import { useCoffeeDataById } from '../../../hooks/useCoffeeDataById';
 import { CardItem } from './CardItem';
 
 var newData = [];
 
 export const CardContainer = () => {
     
-    const {searched} = useSelector((state) => state.searchBar);
-    const {data} = useCoffeeData();
+    const { searched } = useSelector((state) => state.searchBar);
+    const { data }     = useSelector((state) => state.coffeeData);
 
     if(searched == ''){
       newData = data;
@@ -21,8 +19,6 @@ export const CardContainer = () => {
     useEffect(() => {
       newData = data.filter(coffee => coffee.name.toUpperCase().includes(searched.toUpperCase()));
     }, [searched])
-
-    console.log(data);
 
     return (
     <section className='card-shop-container'>

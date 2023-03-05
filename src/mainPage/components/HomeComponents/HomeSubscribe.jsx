@@ -14,7 +14,7 @@ const initial ={
 export const HomeSubscribe = () => {
 
   const {email, onInputChange, onResetForm} = useForm(initial);
-  const url = 'http://localhost:4000/send-email';
+  const url = 'https://coffeeshopbackend.up.railway.app/send-email';
 
   const [error, setError] = useState({ok : true})
   

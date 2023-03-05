@@ -15,11 +15,12 @@ export const Contact = () => {
     useEffect(() => {
       document.querySelectorAll('.slide').forEach(e => e.classList.add('slided'))
     }, [])
-
+    
     const [error, setError] = useState({ok : true});
+    const [send, setSend] = useState({state: false})
 
     const {name, email, msg, onInputChange, onResetForm} = useForm(initial);
-    const url = 'http://localhost:4000/recieve-email';
+    const url = 'https://coffeeshopbackend.up.railway.app/recieve-email';
     
     const {errors} = error;
 
@@ -27,11 +28,13 @@ export const Contact = () => {
 
         e.preventDefault();
         console.log(email);
+        
 
         try {
 
             await axios.post(url, {name : name, email : email, msg : msg});
             setError({ok : true});
+            setSend({state : true})
             onResetForm();
 
         } catch (err) {
@@ -85,7 +88,12 @@ export const Contact = () => {
                     <button type='submit'>
                         Send
                     </button>
+                    <div className='contact-send-state'>
+                        {send.state ? 'Email sent succesfully.' : ''}
+                    </div>
                 </div>
+
+
             </form>
          </div>
          <div className='contact-img'>

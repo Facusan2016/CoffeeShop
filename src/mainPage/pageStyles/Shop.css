@@ -305,13 +305,18 @@ a{
 
 @media screen and (max-width : 1024px) {
 
+    .title-shop{
+        padding: 6rem 1rem 2rem 1rem ;
+    }
+
     .title-shop > h1{
+        
         font-size: 3rem;
         border: none;
     }
 
     .search-bar{
-        padding: 1rem;
+        padding: 2rem 1rem 0rem 1rem;
     }
 
     .card-shop-container{
