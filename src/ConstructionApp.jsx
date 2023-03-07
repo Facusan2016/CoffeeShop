@@ -1,5 +1,5 @@
 import { AnimatePresence } from 'framer-motion'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { AppRouter } from './router/AppRouter'
 import { setLocalCoffees } from './store/shopCartSlice'
@@ -11,7 +11,11 @@ export const ConstructionApp = () => {
 
   const dispatch = useDispatch();
   dispatch(startLoadingCoffeeData());
-  dispatch(setLocalCoffees());
+  
+  useEffect(() => {
+    dispatch(setLocalCoffees());
+  }, [])
+  
 
   return (
     <>   
