@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { setLocalStorage } from '../mainPage/helpers/setLocalStorage';
 
 export const shopCartSlice = createSlice({
     
@@ -12,6 +13,12 @@ export const shopCartSlice = createSlice({
 
     reducers: {
 
+        setLocalCoffees: (state) => {
+            var localArray = JSON.parse(localStorage.getItem('coffeeArray'));
+            state.coffeeArray = localArray;
+            state.counterItems = localArray.length;
+        },
+        
         addCoffee: (state, action) => {
 
             
@@ -19,6 +26,7 @@ export const shopCartSlice = createSlice({
                 
                 state.counterItems += 1;
                 state.coffeeArray.push(action.payload.data);
+                setLocalStorage(state.coffeeArray);
 
             }else{
 
@@ -35,6 +43,7 @@ export const shopCartSlice = createSlice({
             })
 
             state.coffeeArray = newArr;
+            setLocalStorage(state.coffeeArray);
         },
 
         updateCoffeQuantity : (state, action /*id_name*/ /*quantity*/) => {
@@ -42,7 +51,8 @@ export const shopCartSlice = createSlice({
             var searchArr = state.coffeeArray.map(e => e.id_name);
             var place = searchArr.indexOf(action.payload.id_name);
 
-            state.coffeeArray[place].quantity = action.payload.quantity; 
+            state.coffeeArray[place].quantity = action.payload.quantity;
+            setLocalStorage(state.coffeeArray);
         }
     }
 });
@@ -51,6 +61,7 @@ export const shopCartSlice = createSlice({
 // Action creators are generated for each case reducer function
 export const {
 
+    setLocalCoffees,
     addCoffee,
     removeCoffee,
     updateCoffeQuantity 

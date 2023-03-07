@@ -1,11 +1,14 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { setLocalCoffees } from '../../../store/shopCartSlice'
 import { ShopCartItem } from './ShopCartItem'
 
 export const ShopCartList = () => {
 
     const { coffeeArray } = useSelector((state) => state.shopCart);
     console.log(coffeeArray);
+
+    const dispatch = useDispatch();
 
     return (
         <section className='cart-shop-container'>
