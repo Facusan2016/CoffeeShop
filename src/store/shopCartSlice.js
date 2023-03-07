@@ -16,7 +16,7 @@ export const shopCartSlice = createSlice({
         setLocalCoffees: (state) => {
             var localArray = JSON.parse(localStorage.getItem('coffeeArray'));
             state.coffeeArray = localArray;
-            state.counterItems = localArray.length;
+            (coffeeArray = null) ? state.counterItems = 0 : localArray.length;
         },
         
         addCoffee: (state, action) => {
