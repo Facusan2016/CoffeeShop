@@ -48,7 +48,7 @@ export const ShopCartCheckout = () => {
     <section className='cart-checkout'>
 
 
-        <div className={menu ? 'cart-checkout-code-info' : 'cart-checkout-code-info nav-transformed'}>
+        <div className={menu ? 'cart-checkout-code-info nav-transformed' : 'cart-checkout-code-info'}>
             
             <h2>Enter promo code</h2>
 
