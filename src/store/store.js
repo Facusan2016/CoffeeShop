@@ -3,6 +3,8 @@ import { coffeeDataSlice } from "./coffeeData";
 import { searchBarSlice } from "./searchBarSlice";
 import { shopCartSlice } from "./shopCartSlice";
 
+//Initial configuration of the store
+
 export const store = configureStore({
     reducer : {
         searchBar : searchBarSlice.reducer,

@@ -10,7 +10,6 @@ export const Navbar = () => {
 
     const handleMenu = () =>{
         setnavState(!navState);
-
     }
 
     const NotActiveNav = 'nav-links ';
@@ -29,6 +28,7 @@ export const Navbar = () => {
             <NavLink to="/about" className='nav-link' onClick={handleMenu}>About Us</NavLink>
             <NavLink to="/contact-us" className='nav-link' onClick={handleMenu}>Contact Us</NavLink>
             <NavLink to="/shop-cart" className='nav-btn' onClick={handleMenu}>
+                <div className='notification'></div>
                 <img src='/shopping-cart.svg'></img>
                 {counterItems}
             </NavLink>
@@ -36,6 +36,7 @@ export const Navbar = () => {
         </section>
 
         <button className={navState ? 'hamBtn off' : 'hamBtn'} onClick={handleMenu}>
+            <div className='notification menu-notification'></div>
             <div className='first-span'/>
             <div className='second-span'/>
             <div className='third-span'/>

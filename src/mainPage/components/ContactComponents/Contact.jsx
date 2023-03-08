@@ -4,7 +4,7 @@ import { useForm } from '../../../hooks/useForm'
 import '../../../mainPage/pageStyles/ContactUs.css'
 import img from './assets/greenleaves.jpg'
 
-const initial = {
+const initial = { //I set an initial form to each input and then use my custom useForm hook to handle it.
     name : '',
     email : '',
     msg : '',
@@ -12,30 +12,30 @@ const initial = {
 
 export const Contact = () => {
 
-    useEffect(() => {
+    useEffect(() => { 
       document.querySelectorAll('.slide').forEach(e => e.classList.add('slided'))
     }, [])
     
-    const [error, setError] = useState({ok : true});
+    const [error, setError] = useState({ok : true}); //Here i'm using useState to hanlde the errors and show them conditionally.
     const [send, setSend] = useState({state: false})
 
     const {name, email, msg, onInputChange, onResetForm} = useForm(initial);
-    const url = 'https://coffeeshopbackend.up.railway.app/recieve-email';
+    const url = 'https://coffeeshopbackend.up.railway.app/recieve-email'; //This is the url where I make the post petition using Axios
     
     const {errors} = error;
 
     const onSubmit = async(e)=>{
 
         e.preventDefault();
-        console.log(email);
-        
 
         try {
+
+            //If all data is correct, use onResetForm and then show succees messages
 
             await axios.post(url, {name : name, email : email, msg : msg});
             setError({ok : true});
             setSend({state : true})
-            onResetForm();
+            onResetForm();  
 
         } catch (err) {
 

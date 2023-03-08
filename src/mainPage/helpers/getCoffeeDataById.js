@@ -1,6 +1,6 @@
-
-
 import { useSelector } from 'react-redux';
+
+//This functions select a specified item based on the id
 
 export const getCoffeeDataById = (id = '') => {
 

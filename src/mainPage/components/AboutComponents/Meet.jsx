@@ -1,7 +1,7 @@
 import React from 'react'
 import { MeetCardList } from './Cards'
 
-export const Meet = () => {
+export const Meet = () => { //Main container of the meet section cards.
   return (
     <section className='main-meet'>
       <h1>Meet the team</h1>

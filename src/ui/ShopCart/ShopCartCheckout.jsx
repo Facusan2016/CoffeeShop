@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useForm } from '../../hooks/useForm';
 import { estimatedTotal } from '../helpers/estimatedTotal';
 
@@ -8,9 +8,21 @@ const initial = {
 }
 
 export const ShopCartCheckout = () => {
-  
+
+    //Setting the initial state of the notification dot.
+    
+    useEffect(() => {
+        
+        const notification = document.querySelectorAll('.notification');
+
+        notification.forEach(element => {
+            element.style.opacity = '0%';
+        });
+
+    }, [])
+    
  
-    const codes = [{code : 'beanscene', discount : .10}, {code : 'coffee', discount : .15}];
+    const codes = [{code : 'beanscene', discount : .10}, {code : 'coffee', discount : .15}]; //Discount codes
     
     const [valid, setValid] = useState({value : false, first : true})
     const [menu, setMenu] = useState(false)
@@ -24,13 +36,15 @@ export const ShopCartCheckout = () => {
         return e.code === usedcode
     })
 
-    const {total, estTot, totShip, totDisc, totTax } = estimatedTotal(.1, codeValue ? codeValue.discount : 0 ,.2);
+    const {total, estTot, totShip, totDisc, totTax } = estimatedTotal(.1, codeValue ? codeValue.discount : 0 ,.2); //Here i get the final values after the discounts
     
     const handleSubmit = (e) => {
         
         e.preventDefault();
         var pass = codes.findIndex(e => e.code === inputCode);
         
+        //Handling errors depending if the correct code was inserted.
+
         if(pass != -1){
             setValid({value : true, first : false});
             setUsedCode(inputCode);
@@ -54,7 +68,7 @@ export const ShopCartCheckout = () => {
 
             <form onSubmit={handleSubmit} className='cart-checkout-promo'>
                 <input disabled={valid.value} value={inputCode} name='inputCode' onChange={onInputChange} type='text'></input>
-                <button>Submit</button>
+                <button className='cart-btn-animation'>Submit</button>
                 <h3 className='code'>{valid.value && !valid.first ? 'Código correcto' : !valid.value && valid.first ? '' : 'Código incorrecto'}</h3>
             </form>
 
@@ -95,7 +109,7 @@ export const ShopCartCheckout = () => {
                 <h2>Estimated Total</h2>
                 <h3>${estTot.toFixed(2)}</h3>
             </div>
-            <button className='cart-checkout-button'>
+            <button className='cart-checkout-button cart-btn-animation'>
                 Checkout
             </button>
         </div>

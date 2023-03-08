@@ -5,8 +5,9 @@ export const getCoffeeData = async() =>{
     
     try {
 
-        const {data} = await axios.get(url);
+        const {data} = await axios.get(url); //Axios request to the url to get coffeData
         const prices = [1, 1.25, 2, 1.50, 2.50, 2.75, 1.75, 2.25, 3, 3.50, 1, 1.25, 2, 1.50, 2.50, 2.75, 1.75, 2.25, 3, 3.50]
+        //I'm not the owner of this api rest, so i added my local prices to each one.
         
     
         const coffees = data.map(e => (

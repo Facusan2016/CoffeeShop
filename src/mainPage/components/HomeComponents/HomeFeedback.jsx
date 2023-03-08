@@ -1,64 +1,67 @@
-import { useEffect } from 'react'
-import coffeeblast from '../../../assets/coffee-blast.png'
-import useObserver from '../../../hooks/useObserver'
-import feedbackPerson from './assets/HomeFeedbackImg/person.png'
+export const HomeFeedback = (id) => {
 
-export const HomeFeedback = () => {
+  //Here I made a simple slider with local data that can be modified
 
+  const click = (id) =>{
+    
+    const slider = document.querySelector('.slider');
+    const Allbuttons = document.querySelectorAll('.button')
+    const button = document.querySelector(`#button-${id}`);
 
-  const [observer, setElements, entries] = useObserver({
-    root : null,
-    rootMargin : '0px',
-    threshold : 1
-  })
+    Allbuttons.forEach(e => e.style.backgroundColor = 'rgb(97, 97, 97)'); //Buttons styling depending on the sub-slider
+    button.style.backgroundColor = 'rgb(48, 48, 48)'
 
-  useEffect(() => {
-  const items = document.querySelectorAll('.qmark');
-  setElements(items);
+    var value = `translateX(-${(id - 1)*100}%)`; //Here I use translateX to move the slider depending on what button was clicked.
+    slider.style.transform = String(value);
 
-  }, [setElements])
+  }
+  
+  const sliderInfo = [
+    {
+      id : 1,
+      name : 'Lorem Ipsum',
+      content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit ligula purus, a placerat neque tempus a. Cras vel volutpat turpis. Quisque ac erat vestibulum, maximus libero ut, egestas diam. Suspendisse potenti. Aenean quis tellus dignissim, ornare purus non, facilisis nulla. Morbi eu ultrices purus. Pellentesque consequat sapien non faucibus blandit.',
+      img : './coffee-about/Portraits/NullaSit.jpg'
 
+    },{
 
-  useEffect(() => {
-  entries.forEach((entry) => {
-      if(entry.isIntersecting){
-      const item = entry.target;
-      item.classList.add('loaded-qmark');
-      observer.unobserve(item);
-      }
-  })
-  }, [entries, observer]);
+      id : 2,
+      name : 'Nunc viverra',
+      content : 'In fringilla lacinia metus vitae gravida. Proin lacinia sodales elit mollis posuere. Maecenas fermentum erat lorem, commodo lobortis tellus rhoncus a. Sed iaculis diam id justo feugiat, eu commodo tellus porta. Cras tortor neque, mattis non molestie vel, mollis sit amet nibh. Proin consequat erat ac sollicitudin dapibus. Sed fringilla.',
+      img : './coffee-about/Portraits/NamRutrum.jpg'
+
+    },{
+
+      id : 3,
+      name : 'Quisque sit',
+      content : 'Interdum et malesuada fames ac ante ipsum primis in faucibus. In vestibulum nibh et elit accumsan, non egestas est mollis. Donec efficitur massa sed feugiat vulputate. Proin ornare orci elit, ac hendrerit felis malesuada ac. Maecenas sapien velit, pretium sed mollis et, molestie id tortor. Nulla eget finibus sapien. Aliquam.',
+      img : './coffee-about/Portraits/PellentesqueArcu.jpg'
+
+    }
+] 
 
   return (
-    <section className='home-feedback'>
-        
-        <img src={coffeeblast}  loading='lazy'></img>
-        <img src={coffeeblast} loading='lazy'></img>
+    <section className='home-fb-container'>
+      
+      <div className='home-fb-slider-wrapper'>
+        <div className='slider'>
+          {sliderInfo.map(e => 
+          <div key={e.id} id={`slide-${e.id}`} className = 'sliderSub'>
+            <div>
+              <h1 className='slider-title'>{e.name}</h1>
+              <h2 className='slider-content'>{e.content}</h2>
+            </div>
+            <img className='slider-img' src={e.img}></img>
+          </div>
+          )}
+        </div>
+        <div className='slider-nav'>
+            {sliderInfo.map(e => 
+              <button className='button' id={`button-${e.id}`} key={e.id} onClick={() => {click(e.id)}} ></button>
+            )}
 
-        <h1>Our coffee perfection feedback</h1>
-        <h3>Our customers has amazing things to say about us</h3>
-
-        <article>
-          
-          <button>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8 9V16L0 8L8 0V7H16V9H8Z" fill="currentColor"/>
-            </svg>
-          </button>
-
-          <button>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8 9V16L0 8L8 0V7H16V9H8Z" fill="currentColor"/>
-            </svg>
-          </button>
-          
-          <h1><p className='qmark'>“</p></h1>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset.....</p>
-          <h2>Johnny Thomas</h2>
-          <h3>Project Manager</h3>
-         
-          <img className='fbperson' src={feedbackPerson} loading='lazy'></img>
-        </article>
+        </div>
+      </div>
 
     </section>
     

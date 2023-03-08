@@ -1,10 +1,9 @@
 import React from 'react'
-import { Teamdata } from '../Teamdata'
+import { Teamdata } from '../Teamdata' //Importing data from Teamdata.js
 import { MeetCard } from './MeetCard'
 
 export const MeetCardList = () => {
 
-    //Importar datos
 
     return (
         <section className='meetCardList'>

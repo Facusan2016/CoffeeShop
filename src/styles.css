@@ -43,6 +43,12 @@
     --nav-heigth: 8vw;
     --nav-font-size : 3vw;
 
+    background-color: black;
+
+}
+
+button, a{
+    -webkit-tap-highlight-color: transparent;
 }
 
 .yellow-button{
@@ -100,7 +106,7 @@
 }
 
 .loaded-text-bright{
-    animation: text-bright 1.5s ease forwards;
+    animation: text-bright 1s ease forwards;
 }
 
 ::-webkit-scrollbar {
@@ -148,15 +154,13 @@
 
 @keyframes text-bright {
     0%{
-        text-shadow: 0px 0px 1rem rgba(255, 255, 255, 0.582);
         background-position-x: -100rem;
     }
     50%{
-        text-shadow: 0px 0px 1rem white;
         background-position-x: -100rem;
 
     }100%{
-        text-shadow: 0px 0px 1rem rgba(255, 255, 255, 0);
+        
         background-position-x: 0rem;
     }
 }

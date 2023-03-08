@@ -10,11 +10,11 @@ const initial = {
 
 export const SearchBar = () => {
 
-  const {searched, onInputChange} = useForm(initial);
+  const {searched, onInputChange} = useForm(initial); //Using my custom hook to hanlde form data.
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(updateSearched(searched));
+    dispatch(updateSearched(searched)); //Using redux store reducers to set the actual searched element
   }, [searched])
 
   

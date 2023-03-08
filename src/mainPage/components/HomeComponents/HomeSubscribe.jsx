@@ -1,6 +1,5 @@
 
 import { useForm } from '../../../hooks/useForm'
-import cupexp from './assets/HomeSubscribeImg/cup-explosion.png'
 import axios from 'axios'
 import { useState } from 'react'
 import Swal from 'sweetalert2'
@@ -14,20 +13,19 @@ const initial ={
 export const HomeSubscribe = () => {
 
   const {email, onInputChange, onResetForm} = useForm(initial);
-  const url = 'https://coffeeshopbackend.up.railway.app/send-email';
+  const url = 'https://coffeeshopbackend.up.railway.app/send-email'; //This is the route where I make my backend petitions.
 
   const [error, setError] = useState({ok : true})
   
   const onSubmit = async(e)=>{
     
     e.preventDefault();
-    console.log(email);
 
     try {
 
       await axios.post(url,{email : email});
       setError({ok : true});
-      const MySwal = withReactContent(Swal)
+      const MySwal = withReactContent(Swal) //Here i'm using Swal to alert the user that he was correctly subscribed to the newsletter.
 
       MySwal.fire({
         title: <p>Now you're subscribed to ours Newsletter!</p>,
@@ -49,9 +47,6 @@ export const HomeSubscribe = () => {
 
   return (
     <section className='home-subscribe'>
-          
-        <img src={cupexp} loading='lazy'></img>
-        <img src={cupexp} loading='lazy'></img>
 
         <div>
           <article className='home-subscribe-info'>

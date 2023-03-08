@@ -32,7 +32,7 @@ export const HomeInfo = () => {
 
         let counter = 0;
 
-        const i = setInterval(function(){
+        const i = setInterval(function(){ //This function makes each item being shown in a 400ms interval.
 
           child[counter].classList.add('loaded-opacity');
           observer.unobserve(child[counter]);
@@ -79,9 +79,8 @@ export const HomeInfo = () => {
             </article>
           </div>
 
-          <h3>Great ideas start with great coffee, Lets help you achieve that</h3>
-          <h4>Get started today</h4>
-          <Link className='yellow-button info-btn' to='/shop'><b>Join Us</b></Link>
+          <h2>Get started today</h2>
+          <Link className='yellow-button info-btn' to='/contact-us'><b>Join Us</b></Link>
 
     </section>
   )

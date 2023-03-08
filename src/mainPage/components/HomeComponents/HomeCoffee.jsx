@@ -1,13 +1,9 @@
 import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import useObserver from '../../../hooks/useObserver'
-import { startLoadingCoffeeData } from '../../../store/thunks'
 import coffeecup    from './assets/HomeCoffeeImg/coffee-cup.png'
 
 export const HomeCoffee = () => {
-
-    const dispatch = useDispatch();
 
     const [observer, setElements, entries] = useObserver({
         root : null,

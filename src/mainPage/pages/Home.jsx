@@ -1,5 +1,5 @@
 import '../pageStyles/Home.css'
-import { HomeShop, HomeCoffee, HomePresent, HomeInfo, HomeExperience, HomeFeedback, HomeSubscribe} from '../components/HomeComponents';
+import {HomeCoffee, HomePresent, HomeInfo, HomeExperience, HomeFeedback, HomeSubscribe} from '../components/HomeComponents';
 import { Footer} from '../../ui/Footer/Footer'
 import '../../ui/Footer/Footer.css'
 
@@ -10,12 +10,9 @@ import Transitions from '../../transitions/Transitions';
 
 export const Home = () => {
   
-  //TODO: Hacer que los botones al clickearlos se agranden y achiquen
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [])
-
-
 
   return (
     <>
@@ -33,8 +30,8 @@ export const Home = () => {
             
           </section>
 
-          <HomeExperience/>
           <HomeFeedback/>
+          <HomeExperience/>
           
 
           <div className='home-sf'>

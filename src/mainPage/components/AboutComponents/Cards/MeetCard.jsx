@@ -1,5 +1,7 @@
 import React from 'react'
 
+//Each card recieves information as parameters
+
 export const MeetCard = ({
     id,
     name,
@@ -7,7 +9,7 @@ export const MeetCard = ({
     description
 }) => {
 
-  const member = `/coffee-about/Portraits/${id}.jpg`
+  const member = `/coffee-about/Portraits/${id}.jpg` //I find the correspondent picture on Public folder
 
   return (
     <article className='card'>

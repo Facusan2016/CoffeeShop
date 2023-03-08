@@ -120,6 +120,17 @@
 .contact-form-text > input:focus{
     background-color: var(--color-green);
     outline: 1px solid var(--color-light-green);
+    transition: all 1s ease;
+}
+
+.contact-form-text > input,
+.contact-form-text > input:-webkit-autofill,
+.contact-form-text > input:-webkit-autofill:hover,
+.contact-form-text > input:-webkit-autofill:focus,
+.contact-form-text > input:-webkit-autofill:active{
+    transition: background-color 5000s;
+    -webkit-text-fill-color: white !important;
+    ;
 }
 
 .contact-submit{
@@ -141,6 +152,7 @@
     border-radius: 1.25rem;
     border: none;
     transition: transform .5s ease;
+    cursor: pointer;
 }
 
 .contact-submit > button:hover{

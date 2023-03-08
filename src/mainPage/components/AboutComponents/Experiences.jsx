@@ -5,7 +5,7 @@ export const Experiences = () => {
 
     const [observer, setElements, entries] = useObserver({
         root : null,
-        rootMargin : '0px 5000px 0px 5000px',
+        rootMargin : '0px 0px 0px 0px',
         threshold : 0
     })
 

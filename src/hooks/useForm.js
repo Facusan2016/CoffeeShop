@@ -1,11 +1,11 @@
 import { useEffect, useMemo, useState } from 'react';
 
-//Este Hook personalizado fue extraído de Internet
+//This hook was extracted from internet
 
 export const useForm = ( initialForm = {}, formValidations = {}) => {
   
-    const [ formState, setFormState ] = useState( initialForm ); // Uso un state para setear el estado inicial del formulario
-    const [ formValidation, setFormValidation ] = useState({}); // En este caso no usé las validaciones
+    const [ formState, setFormState ] = useState( initialForm ); // I'm using useState hook here to set the initial value
+    const [ formValidation, setFormValidation ] = useState({}); // In this case i'm not going to use this validations
 
     useEffect(() => {
         createValidators();
@@ -13,7 +13,7 @@ export const useForm = ( initialForm = {}, formValidations = {}) => {
 
     useEffect(() => {
         setFormState( initialForm );
-         //Actualizamos el InitialForm cada vez que este mismo cambie
+         //We update the inital form everytime it updates
     }, [initialForm])
 
     const isFormValid = useMemo( () => {
@@ -28,14 +28,14 @@ export const useForm = ( initialForm = {}, formValidations = {}) => {
 
     const onInputChange = ({ target }) => {
         const { name, value } = target;
-        setFormState({  //Cada vez que cambia la entrada, el FormState se actualiza con los valores correspondientes
+        setFormState({  //Everytime that the entry changes it sets again with the proper values.
             ...formState,
             [ name ]: value
         });
     }
 
     const onResetForm = () => {
-        setFormState( initialForm ); //Se vuelve el formulario a su estado inicial
+        setFormState( initialForm ); // Reseting the form to the initial State
     }
 
     const createValidators = () => {
@@ -52,7 +52,7 @@ export const useForm = ( initialForm = {}, formValidations = {}) => {
     }
 
 
-    //Exportación de las funciones y variables
+    //Functions and variables exporting
 
     return {
         ...formState,

@@ -9,6 +9,8 @@ import './styles.css'
 
 export const ConstructionApp = () => {
 
+  //Here i'm loading the coffee Data when this page renders
+
   const dispatch = useDispatch();
   dispatch(startLoadingCoffeeData());
   
@@ -19,9 +21,7 @@ export const ConstructionApp = () => {
 
   return (
     <>   
-        <AnimatePresence mode='wait'>
-            <AppRouter/>
-        </AnimatePresence>
+      <AppRouter/>
     </>
   )
 }

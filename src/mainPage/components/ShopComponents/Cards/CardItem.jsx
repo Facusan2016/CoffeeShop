@@ -1,12 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
+//Card item using data passed as params
+
 export const CardItem = ({
 
     id_name,
     name,
     ingredients,
-    description,
     img
 
 }) => {

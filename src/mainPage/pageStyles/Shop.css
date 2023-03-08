@@ -163,6 +163,10 @@ a{
     transform: scale(1.1);
 }
 
+.card-item-btn:active{
+    transform: scale(1.15);
+}
+
 .not-found{
     font-family: 'Playfair Display';
     color: var(--color-shop-coffee);
@@ -299,6 +303,10 @@ a{
 
 .coffee-page-add:hover{
     transform: scale(1.01);
+}
+
+.coffee-page-add:active{
+    transform: scale(1.03);
 }
 
 /*Mobile styles*/

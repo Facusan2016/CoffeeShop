@@ -4,9 +4,9 @@ import useObserver from '../../../hooks/useObserver';
 export const AboutMain = () => {
 
     var w = window.innerWidth;
-    const threshold = (w <= 1024) ? 0 : 1
+    const threshold = (w <= 1024) ? 0 : 1 //I conditionally select the root margin and threshold for Mobiles and Desktop
     const rootMargin = (w <= 1024) ?'500px 5000px 500px 5000px' : '0px 5000px 0px 5000px'
-
+    
     const [observer, setElements, entries] = useObserver({
         root : null,
         rootMargin : rootMargin,

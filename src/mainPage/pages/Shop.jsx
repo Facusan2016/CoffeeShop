@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react'
 import Transitions from '../../transitions/Transitions';
 import { Footer } from '../../ui/Footer/Footer';
 import { CardContainer } from '../components/ShopComponents/Cards/CardContainer';

@@ -9,11 +9,11 @@ import { getCoffeeDataById } from '../../../helpers/getCoffeeDataById';
 
 export const CardPage = () => {
   
-    const { id } = useParams();
-    const [amount, setAmount] = useState(1)
+    const { id } = useParams(); //Getting the coffee id from the url (it's passed as a param when i make the request)
+    const [amount, setAmount] = useState(1) //This sets the initial state of the counter coffee.
     const dispatch = useDispatch();
 
-    const {filteredData} = getCoffeeDataById(id);
+    const {filteredData} = getCoffeeDataById(id); //Getting only the filtered coffee using the id
     const [pushData, setPushData] = useState({...filteredData})
 
     const {name, ingredients, description, price} = filteredData;
@@ -32,12 +32,18 @@ export const CardPage = () => {
     }
 
     const HandleClickAdd = () => {
+
+        const notification = document.querySelectorAll('.notification'); //Handling the visibility of the red notification dot.
+        notification.forEach(element => {
+            element.style.opacity = '100%';
+        });
         
-        console.log(filteredData)
+
         pushData.quantity = amount
-        setPushData(pushData)
+        setPushData(pushData);
+        
         updateCoffeQuantity({id_name : pushData.id_name, quantity : amount })
-        dispatch(addCoffee({data : pushData, amount : amount, id_name : filteredData.id_name}));
+        dispatch(addCoffee({data : pushData, amount : amount, id_name : filteredData.id_name})); //Here I'm using reducers to set the proper quantity of coffees selected
         
     }
   
@@ -56,7 +62,7 @@ export const CardPage = () => {
                                 ingredients != undefined
                                 ? ingredients.map((ing, index) =>{return(
                                     index < ingredients.length - 1 
-                                    ? `${ing}`
+                                    ? ` ${ing}, `
                                     : ing
                                 );})
 

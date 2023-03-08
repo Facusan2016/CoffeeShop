@@ -14,6 +14,8 @@ export const shopCartSlice = createSlice({
     reducers: {
 
         setLocalCoffees: (state) => {
+
+            //This reducer tries to get the ShopCart info from the localStorage, if the localStorage is empty it sets an empty array.
             
             var localArray = JSON.parse(localStorage.getItem('coffeeArray'));
 
@@ -22,11 +24,13 @@ export const shopCartSlice = createSlice({
             }
             
             state.coffeeArray = JSON.parse(localStorage.getItem('coffeeArray'));
+            state.counterItems = state.coffeeArray.length;
 
         },
         
         addCoffee: (state, action) => {
 
+            //Adding coffee to the ShopCartList
             
             if(state.coffeeArray.find(x => x.id_name === action.payload.id_name) === undefined){
                 
@@ -42,6 +46,8 @@ export const shopCartSlice = createSlice({
         },
 
         removeCoffee : (state, action /*id_name*/) => {
+
+             //Removing coffee of the ShopCartList
 
             state.counterItems -= 1;
             var newArr = state.coffeeArray.filter(function(e) {
@@ -63,8 +69,6 @@ export const shopCartSlice = createSlice({
     }
 });
 
-
-// Action creators are generated for each case reducer function
 export const {
 
     setLocalCoffees,
