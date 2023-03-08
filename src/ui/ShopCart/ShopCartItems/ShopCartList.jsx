@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux';
 import { ShopCartItem } from './ShopCartItem'
 
 export const ShopCartList = () => {
