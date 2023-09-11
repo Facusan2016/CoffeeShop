@@ -1,5 +1,5 @@
 import axios from 'axios'
-const url = 'http://localhost:3500/get-data'
+const url = 'https://coffeeshopbackend.up.railway.app/get-data'
 
 export const getCoffeeData = async() =>{
     
